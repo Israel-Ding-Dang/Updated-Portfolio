@@ -240,10 +240,34 @@ a { color: inherit; }
   gap: 2rem;
   margin-top: clamp(2rem, 5vh, 4rem);
 }
+.hero-intro {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(.9rem, 1.5vw, 1.4rem);
+}
+.hero-avatar {
+  width: clamp(52px, 5vw, 68px);
+  height: clamp(52px, 5vw, 68px);
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--mist);
+  flex: 0 0 auto;
+}
 .hero-sub p {
-  max-width: 34em;
+  max-width: 27em;
   margin: 0;
-  font-size: 1.05rem;
+  font-size: clamp(1.05rem, 1.45vw, 1.45rem);
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+/* highlighter swipe for key phrases (wraps cleanly across lines) */
+.mark {
+  background: var(--yellow);
+  color: inherit;
+  padding: .04em .2em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 
 /* ---------- black arrow button ---------- */
@@ -277,10 +301,23 @@ a { color: inherit; }
   text-align: center;
 }
 
+/* eyebrows as sticker chips, same motif as the hero tags */
 .eyebrow {
-  margin: 0 0 1.2rem;
-  font-size: .95rem;
+  display: inline-block;
+  margin: 0 0 1.8rem;
+  font-family: var(--display);
+  font-size: clamp(1.05rem, 1.4vw, 1.4rem);
   font-weight: 400;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  background: var(--lilac);
+  padding: .5em .9em .36em;
+  transform: rotate(-2deg);
+  box-shadow: 2px 3px 0 rgba(0, 0, 0, .15);
+}
+.footer-cta .eyebrow {
+  background: var(--yellow);
+  transform: rotate(2deg);
 }
 
 .statement-title {
