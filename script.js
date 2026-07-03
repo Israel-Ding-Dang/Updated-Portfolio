@@ -1,4 +1,4 @@
-/* ISRAEL — portfolio interactions */
+/* ISRAEL - portfolio interactions */
 (function () {
   "use strict";
 
@@ -49,7 +49,7 @@
       poster: "assets/img/poster-little-yogi.jpg"
     },
     "jobs-board": {
-      title: "Assisting Work — Jobs Board",
+      title: "Assisting Work · Jobs Board",
       role: "Fullstack Developer",
       desc: "A jobs board where employers sign up and post openings for their company. After payment, each job is reviewed and listed among the approved openings. Any user can apply, and their application is routed straight back to the person who posted the job.",
       tags: [["Webflow", "chip-turquoise"], ["Wized", "chip-lilac"], ["Xano", "chip-peach"], ["Payments", "chip-pink"]],
@@ -59,7 +59,7 @@
     "bartending": {
       title: "About Town Bartending",
       role: "Fullstack Webflow Developer",
-      desc: "A pricing calculator for a bartending website, built with Webflow, Wized and Airtable. Package prices were mapped first, the UI designed to the client's preference, then connected to Wized functions. User data is stored in Airtable so the client can measure how the calculator performs over time — with automated emails sent to users who book a date through the final step.",
+      desc: "A pricing calculator for a bartending website, built with Webflow, Wized and Airtable. Package prices were mapped first, the UI designed to the client's preference, then connected to Wized functions. User data is stored in Airtable so the client can measure how the calculator performs over time, with automated emails sent to users who book a date through the final step.",
       tags: [["Webflow", "chip-turquoise"], ["Wized", "chip-lilac"], ["Airtable", "chip-yellow"], ["Automation", "chip-peach"]],
       video: "assets/video/bartending.mp4",
       poster: "assets/img/poster-bartending.jpg"
@@ -67,7 +67,7 @@
     "questworks": {
       title: "QuestWorks",
       role: "Backend Specialist",
-      desc: "A gaming application where players log in to a dashboard to track their progress — and their competitors' — across allocated teams. Airtable stores all user metric data, Wized acts as the server layer sending requests to retrieve and manipulate it, and Webflow delivers the front end players interact with.",
+      desc: "A gaming application where players log in to a dashboard to track their progress, and their competitors', across allocated teams. Airtable stores all user metric data, Wized acts as the server layer sending requests to retrieve and manipulate it, and Webflow delivers the front end players interact with.",
       tags: [["Webflow", "chip-turquoise"], ["Wized", "chip-lilac"], ["Airtable", "chip-yellow"]],
       video: "assets/video/questworks.mp4",
       poster: "assets/img/poster-questworks.jpg"
@@ -107,7 +107,7 @@
     closeBtn.focus();
 
     var playAttempt = lbVideo.play();
-    if (playAttempt && playAttempt.catch) playAttempt.catch(function () { /* autoplay blocked — user presses play */ });
+    if (playAttempt && playAttempt.catch) playAttempt.catch(function () { /* autoplay blocked - user presses play */ });
   }
 
   function closeLightbox() {
