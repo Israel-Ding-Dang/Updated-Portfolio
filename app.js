@@ -378,8 +378,10 @@
   /* ================= ABOUT ================= */
   if (page === "about") {
     var steps = document.querySelectorAll(".p-step");
+    var stepVis = document.querySelectorAll(".p-vis");
     function stepActivate(i) {
       steps.forEach(function (s, n) { s.classList.toggle("is-active", n === i); });
+      stepVis.forEach(function (v, n) { v.classList.toggle("is-active", n === i); });
     }
     if (motionOn && desktop && steps.length) {
       stepActivate(0);

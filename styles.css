@@ -908,9 +908,13 @@ body.page-exit { opacity: 0; }
 }
 .side-frame img {
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
 }
+
+.story-list { margin-top: 2.4rem; }
+.story-list .eyebrow { margin-bottom: 1.1rem; }
+.story-list .spec-rail { max-width: 34em; }
 .story-side .mono a { color: var(--acid); text-decoration: none; }
 .story-side .mono a:hover { color: var(--acid-2); }
 .story-main p { margin: 0 0 1.3rem; color: var(--muted); font-size: 1.08rem; max-width: 38em; }
@@ -936,7 +940,28 @@ body.page-exit { opacity: 0; }
   border-top: 1px solid var(--line);
 }
 .process-head { position: absolute; top: clamp(5.5rem, 12vh, 8rem); left: var(--pad); }
+.process-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+  width: 100%;
+}
 .process-steps { display: grid; }
+.process-visuals {
+  display: grid;
+  max-width: 560px;
+  justify-self: end;
+  width: 100%;
+}
+.p-vis {
+  grid-area: 1 / 1;
+  opacity: 0;
+  transform: scale(.97);
+  transition: opacity .5s ease, transform .5s var(--ease);
+}
+.p-vis.is-active { opacity: 1; transform: none; }
+.p-vis img { aspect-ratio: 4 / 3; }
 .p-step { grid-area: 1 / 1; opacity: 0; visibility: hidden; max-width: 52rem; }
 .p-step.is-active { opacity: 1; visibility: visible; }
 .p-step .n {
@@ -1220,6 +1245,8 @@ body.page-exit { opacity: 0; }
   .process { height: auto; }
   .process-pin { position: relative; height: auto; overflow: visible; display: block; padding: 0; }
   .process-head { position: relative; top: auto; left: auto; padding: 3rem var(--pad) 0; }
+  .process-grid { display: block; }
+  .process-visuals { display: none; }
   .p-step { opacity: 1; visibility: visible; padding: 2.2rem var(--pad); border-top: 1px solid var(--line); }
   .p-step:first-of-type { border-top: 0; margin-top: 1.5rem; }
 
@@ -1255,6 +1282,8 @@ html.no-gsap .scene-head { position: relative; top: auto; left: auto; padding: 3
 html.no-gsap .exhibit { width: auto; margin: 3rem var(--pad) 4.5rem; }
 html.no-gsap .screening-more { position: relative; bottom: auto; right: auto; padding: 0 var(--pad) 3rem; }
 html.no-gsap .process-pin { display: block; padding: 0; }
+html.no-gsap .process-grid { display: block; }
+html.no-gsap .process-visuals { display: none; }
 html.no-gsap .p-step {
   opacity: 1; visibility: visible;
   padding: 2.2rem var(--pad);
@@ -1280,6 +1309,8 @@ html.no-gsap .p-step {
   }
   .svc-panel, .p-step, .exhibit { opacity: 1 !important; visibility: visible !important; transform: none !important; }
   .svc-bgs { display: none; }
+  .process-grid { display: block; }
+  .process-visuals { display: none; }
   .exhibit-media video { display: none; }
   .hero-mono .caret { display: none; }
 }
