@@ -1047,7 +1047,7 @@ body.page-exit { opacity: 0; }
 .contact-hero .page-head-bg::after {
   background: linear-gradient(180deg, rgba(15,19,17,.45), rgba(15,19,17,.08) 50%, rgba(15,19,17,.55) 100%);
 }
-.contact-hero > :not(.page-head-bg) { position: relative; z-index: 1; }
+.contact-hero > :not(.page-head-bg):not(.badge) { position: relative; z-index: 1; }
 .contact-wordmark {
   font-size: clamp(4.5rem, 19vw, 17rem);
   font-weight: 600;
@@ -1276,7 +1276,13 @@ body.page-exit { opacity: 0; }
   .p-step:first-of-type { border-top: 0; margin-top: 1.5rem; }
 
   .contact-links { flex-direction: column; gap: .4rem; }
-  .badge { top: auto; bottom: clamp(14rem, 34vh, 18rem); }
+  /* in-flow on mobile so it can never collide with the content stack */
+  .badge {
+    position: static;
+    align-self: flex-end;
+    width: 96px;
+    margin: 0 0 1.5rem;
+  }
 }
 
 @media (max-width: 560px) {
