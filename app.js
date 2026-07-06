@@ -205,19 +205,23 @@
     /* headline letters */
     var title = document.querySelector(".hero-title");
     if (title && motionOn) {
-      var words = title.textContent.trim().split(/\s+/);
-      title.textContent = "";
-      words.forEach(function (w, wi) {
-        var span = document.createElement("span");
-        span.className = "word";
-        for (var i = 0; i < w.length; i++) {
-          var c = document.createElement("span");
-          c.className = "ch";
-          c.textContent = w[i];
-          span.appendChild(c);
-        }
-        title.appendChild(span);
-        if (wi < words.length - 1) title.appendChild(document.createTextNode(" "));
+      var lineEls = title.querySelectorAll(".hl-line");
+      var targets = lineEls.length ? Array.prototype.slice.call(lineEls) : [title];
+      targets.forEach(function (line) {
+        var words = line.textContent.trim().split(/\s+/);
+        line.textContent = "";
+        words.forEach(function (w, wi) {
+          var span = document.createElement("span");
+          span.className = "word";
+          for (var i = 0; i < w.length; i++) {
+            var c = document.createElement("span");
+            c.className = "ch";
+            c.textContent = w[i];
+            span.appendChild(c);
+          }
+          line.appendChild(span);
+          if (wi < words.length - 1) line.appendChild(document.createTextNode(" "));
+        });
       });
       gsap.from(".hero-title .ch", {
         yPercent: 115, opacity: 0,

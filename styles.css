@@ -13,7 +13,8 @@
   --muted: #b7b7b7;
   --acid: #fdeb07;
   --acid-2: #d3c400;
-  --sans: "Instrument Sans", Arial, sans-serif;
+  --sans: "Space Grotesk", Verdana, sans-serif;
+  --disp: "Clash Display", "Space Grotesk", Arial, sans-serif;
   --mono: "IBM Plex Mono", Consolas, monospace;
   --pad: clamp(1.25rem, 4vw, 4.5rem);
   --ease: cubic-bezier(.22, 1, .36, 1);
@@ -106,8 +107,9 @@ body.page-exit { opacity: 0; }
 }
 
 .display {
+  font-family: var(--disp);
   font-weight: 600;
-  letter-spacing: -.03em;
+  letter-spacing: -.015em;
   line-height: .98;
   margin: 0;
 }
@@ -228,7 +230,7 @@ body.page-exit { opacity: 0; }
 }
 .menu-overlay.open { display: flex; }
 .menu-overlay a {
-  font-family: var(--sans);
+  font-family: var(--disp);
   font-size: clamp(2.2rem, 9vw, 3.4rem);
   font-weight: 600;
   letter-spacing: -.02em;
@@ -380,11 +382,12 @@ body.page-exit { opacity: 0; }
 .hero-title {
   font-size: clamp(3rem, 9.5vw, 8.75rem);
   font-weight: 600;
-  letter-spacing: -.03em;
+  letter-spacing: -.015em;
   line-height: .95;
   margin: 0;
   text-transform: uppercase;
 }
+.hero-title .hl-line { display: block; }
 .hero-title .ch { display: inline-block; will-change: transform, opacity; }
 .hero-title .word { display: inline-block; white-space: nowrap; }
 
@@ -470,7 +473,7 @@ body.page-exit { opacity: 0; }
 .datum:first-child { border-left: 0; }
 .datum b {
   display: block;
-  font-family: var(--sans);
+  font-family: var(--disp);
   font-size: clamp(1.9rem, 3.6vw, 3.2rem);
   font-weight: 600;
   letter-spacing: -.02em;
@@ -536,9 +539,10 @@ body.page-exit { opacity: 0; }
   margin-bottom: 1.2rem;
 }
 .svc-title {
+  font-family: var(--disp);
   font-size: clamp(2.6rem, 7vw, 6rem);
   font-weight: 600;
-  letter-spacing: -.03em;
+  letter-spacing: -.015em;
   line-height: .95;
   text-transform: uppercase;
   margin: 0 0 1.4rem;
@@ -978,9 +982,10 @@ body.page-exit { opacity: 0; }
   display: block;
 }
 .p-step h3 {
+  font-family: var(--disp);
   font-size: clamp(2.2rem, 6vw, 4.5rem);
   font-weight: 600;
-  letter-spacing: -.02em;
+  letter-spacing: -.015em;
   text-transform: uppercase;
   margin: .4rem 0 1rem;
 }
@@ -1051,7 +1056,7 @@ body.page-exit { opacity: 0; }
 .contact-wordmark {
   font-size: clamp(4.5rem, 19vw, 17rem);
   font-weight: 600;
-  letter-spacing: -.035em;
+  letter-spacing: -.02em;
   line-height: .82;
   text-transform: uppercase;
   margin: 0 0 clamp(2rem, 6vh, 3.5rem);
@@ -1239,7 +1244,7 @@ body.page-exit { opacity: 0; }
     order: -1;
   }
   .totem { transform: scale(.62) rotateX(10deg) rotateY(-18deg); }
-  .hero-title { font-size: clamp(2.6rem, 13vw, 4.2rem); }
+  .hero-title { font-size: clamp(2.2rem, 10.5vw, 3.8rem); }
   .scroll-hint { display: none; }
 
   .data-strip { grid-template-columns: repeat(2, 1fr); }
