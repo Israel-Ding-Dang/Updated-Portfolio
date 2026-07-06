@@ -72,7 +72,7 @@
       /* entrance beat: elements already in the first viewport play on load,
          everything else reveals on scroll */
       if (el.getBoundingClientRect().top < window.innerHeight * 0.9) {
-        gsap.from(el, { y: 36, opacity: 0, duration: .85, ease: "power3.out", delay: .2 + delay });
+        gsap.from(el, { y: 36, opacity: 0, duration: .7, ease: "power3.out", delay: .05 + delay });
       } else {
         gsap.from(el, {
           y: 36, opacity: 0, duration: .85, ease: "power3.out", delay: delay,
