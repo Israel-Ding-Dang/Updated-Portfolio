@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Work | Israel</title>
+  <meta name="description" content="Selected fullstack Webflow builds by Israel: Little Yogi booking platform, Assisting Work jobs board, About Town Bartending pricing calculator and QuestWorks player dashboards.">
+  <meta property="og:title" content="Work | Israel">
+  <meta property="og:description" content="Four fullstack Webflow builds. All live, all in use.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230f1311'/%3E%3Ctext x='32' y='46' font-family='Arial Black,Arial' font-size='34' font-weight='900' fill='%23fdeb07' text-anchor='middle'%3EIS%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body data-page="work">
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <a class="logo" href="index.html">Israel<i aria-hidden="true"></i></a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="work.html" aria-current="page">Work</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="menu-overlay">Menu</button>
+  </header>
+  <nav class="menu-overlay" id="menu-overlay" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="work.html" aria-current="page">Work</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main id="main">
+
+    <header class="page-head">
+      <div class="page-head-bg" aria-hidden="true">
+        <img src="assets/img/ai/work-void.jpg" alt="" fetchpriority="high">
+      </div>
+      <p class="eyebrow" data-rv>Selected work</p>
+      <h1 class="page-title display" data-rv="0.08">Work that ships.</h1>
+      <p class="mono" data-rv="0.16" style="color: var(--muted); margin: 1.4rem 0 0;">4 builds &middot; all live &middot; all in use &middot; click any case to watch it working</p>
+    </header>
+
+    <div class="panels">
+
+      <article class="panel" id="little-yogi">
+        <a class="panel-frame" href="#little-yogi" data-open="little-yogi" aria-label="Play the Little Yogi case video">
+          <span class="pf-media">
+            <img src="assets/img/poster-little-yogi.jpg" alt="Little Yogi booking platform, parents booking children's yoga classes" width="1600" height="660">
+          </span>
+        </a>
+        <div class="panel-info">
+          <div class="spec-rail">
+            <span class="row"><span>Case</span><b>No. 01</b></span>
+            <span class="row"><span>Role</span><b>Front-end &amp; Backend Developer</b></span>
+            <span class="row"><span>Stack</span><b>Webflow &middot; Wized &middot; Xano &middot; Stripe</b></span>
+            <span class="row"><span>Type</span><b>Booking platform</b></span>
+          </div>
+          <h2 class="panel-name display">Little Yogi</h2>
+          <p class="panel-desc">Parents log in, book kids' yoga classes and pay with Stripe. Bookings sync
+          to the studio's Outlook calendar, and session photos land in the parent dashboard.</p>
+          <button class="watch-link" data-open="little-yogi">Watch it work</button>
+        </div>
+      </article>
+
+      <article class="panel alt" id="jobs-board">
+        <a class="panel-frame" href="#jobs-board" data-open="jobs-board" aria-label="Play the Assisting Work jobs board case video">
+          <span class="pf-media">
+            <img src="assets/img/poster-jobs-board.jpg" alt="Assisting Work jobs board, employer dashboard with job listings" loading="lazy" width="1600" height="762">
+          </span>
+        </a>
+        <div class="panel-info">
+          <div class="spec-rail">
+            <span class="row"><span>Case</span><b>No. 02</b></span>
+            <span class="row"><span>Role</span><b>Fullstack Developer</b></span>
+            <span class="row"><span>Stack</span><b>Webflow &middot; Wized &middot; Xano</b></span>
+            <span class="row"><span>Type</span><b>Jobs board</b></span>
+          </div>
+          <h2 class="panel-name display">Assisting Work</h2>
+          <p class="panel-desc">Employers pay to post jobs; approved listings go live on the board and
+          every application routes straight back to the poster.</p>
+          <button class="watch-link" data-open="jobs-board">Watch it work</button>
+        </div>
+      </article>
+
+      <article class="panel" id="bartending">
+        <a class="panel-frame" href="#bartending" data-open="bartending" aria-label="Play the About Town Bartending case video">
+          <span class="pf-media">
+            <img src="assets/img/poster-bartending.jpg" alt="About Town Bartending pricing calculator" loading="lazy" width="1600" height="788">
+          </span>
+        </a>
+        <div class="panel-info">
+          <div class="spec-rail">
+            <span class="row"><span>Case</span><b>No. 03</b></span>
+            <span class="row"><span>Role</span><b>Fullstack Webflow Developer</b></span>
+            <span class="row"><span>Stack</span><b>Webflow &middot; Wized &middot; Airtable</b></span>
+            <span class="row"><span>Type</span><b>Pricing calculator</b></span>
+          </div>
+          <h2 class="panel-name display">About Town Bartending</h2>
+          <p class="panel-desc">A pricing calculator for bar packages: quotes computed in Wized, every
+          enquiry stored in Airtable, follow-up emails sent automatically to people who book a date.</p>
+          <button class="watch-link" data-open="bartending">Watch it work</button>
+        </div>
+      </article>
+
+      <article class="panel alt" id="questworks">
+        <a class="panel-frame" href="#questworks" data-open="questworks" aria-label="Play the QuestWorks case video">
+          <span class="pf-media">
+            <img src="assets/img/poster-questworks.jpg" alt="QuestWorks gaming application, player dashboard" loading="lazy" width="1600" height="888">
+          </span>
+        </a>
+        <div class="panel-info">
+          <div class="spec-rail">
+            <span class="row"><span>Case</span><b>No. 04</b></span>
+            <span class="row"><span>Role</span><b>Backend Specialist</b></span>
+            <span class="row"><span>Stack</span><b>Webflow &middot; Wized &middot; Airtable</b></span>
+            <span class="row"><span>Type</span><b>Player dashboards</b></span>
+          </div>
+          <h2 class="panel-name display">QuestWorks</h2>
+          <p class="panel-desc">Player dashboards for a gaming app, with each user's progress and their
+          competitors' stats pulled live from Airtable through Wized.</p>
+          <button class="watch-link" data-open="questworks">Watch it work</button>
+        </div>
+      </article>
+
+    </div>
+
+    <a class="cta-strip" href="contact.html">
+      <span class="display">Have a project? Let's build</span>
+      <span class="arr" aria-hidden="true">&#8594;</span>
+    </a>
+
+  </main>
+
+  <footer class="footer">
+    <span class="mono copyright">&copy; 2026 Israel &middot; Fullstack Webflow Developer</span>
+    <span class="mono">
+      <a href="mailto:Israeldianga@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/israel-dianga-b27621217" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.upwork.com/freelancers/~019128efde315b79e5" target="_blank" rel="noopener">Upwork</a>
+    </span>
+  </footer>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lb-title" hidden>
+    <div class="lightbox-inner">
+      <button class="lightbox-close" aria-label="Close case video">&#10005;</button>
+      <div class="lightbox-info">
+        <p class="lightbox-eyebrow" id="lb-no"></p>
+        <h2 class="lightbox-title display" id="lb-title"></h2>
+        <p class="lightbox-role" id="lb-role"></p>
+        <p class="lightbox-desc" id="lb-desc"></p>
+        <ul class="lightbox-tags" id="lb-tags" aria-label="Stack"></ul>
+      </div>
+      <div class="lightbox-media">
+        <video id="lb-video" controls playsinline preload="metadata"></video>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

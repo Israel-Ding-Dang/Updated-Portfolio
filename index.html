@@ -8,285 +8,215 @@
   <meta property="og:title" content="Israel | Fullstack Webflow Developer">
   <meta property="og:description" content="Apps, not just websites. Fullstack Webflow builds with Wized, Xano, Airtable and Stripe.">
   <meta property="og:type" content="website">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23000'/%3E%3Ctext x='32' y='46' font-family='Arial Black,Arial' font-size='34' font-weight='900' fill='%23fff' text-anchor='middle'%3EIS%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230f1311'/%3E%3Ctext x='32' y='46' font-family='Arial Black,Arial' font-size='34' font-weight='900' fill='%23fdeb07' text-anchor='middle'%3EIS%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script defer src="app.js"></script>
 </head>
-<body>
+<body data-page="home">
 
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="nav" id="top">
-    <a class="logo" href="#top" aria-label="Israel, home">
-      <span class="logo-mark" aria-hidden="true">is</span><span class="logo-word">rael</span>
-    </a>
-    <nav class="nav-links" id="nav-links" aria-label="Main navigation">
-      <a href="#work">Work</a>
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+  <header class="nav">
+    <a class="logo" href="index.html">Israel<i aria-hidden="true"></i></a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="work.html">Work</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
     </nav>
-    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">
-      Menu <span class="nav-toggle-lines" aria-hidden="true"><i></i><i></i></span>
-    </button>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="menu-overlay">Menu</button>
   </header>
+  <nav class="menu-overlay" id="menu-overlay" aria-label="Mobile navigation">
+    <a href="index.html" aria-current="page">Home</a>
+    <a href="work.html">Work</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
   <main id="main">
 
-    <!-- ============ HERO ============ -->
+    <!-- ============ HERO: THE WWX TOTEM ============ -->
     <section class="hero">
-      <h1 class="hero-title">
-        <span class="hero-row">
-          <span class="hero-word reveal">Apps,</span>
-          <span class="hero-media reveal" style="--d:.15s">
-            <img src="assets/img/poster-jobs-board.jpg" alt="Admin dashboard of the Assisting Work jobs board, built with Webflow and Wized" width="1600" height="762">
-          </span>
-          <span class="hero-word reveal" style="--d:.1s">not<span class="sticker sticker-lilac" aria-hidden="true">Fullstack</span></span>
-        </span>
-        <span class="hero-row">
-          <span class="hero-media reveal" style="--d:.25s">
-            <img src="assets/img/poster-little-yogi.jpg" alt="Little Yogi booking platform for children's yoga classes" width="1600" height="660">
-          </span>
-          <span class="hero-word reveal" style="--d:.2s">just websites<span class="sticker sticker-yellow" aria-hidden="true">Webflow</span></span>
-        </span>
-      </h1>
-      <div class="hero-sub">
-        <p class="reveal" style="--d:.35s">I'm Israel, a fullstack Webflow developer. I build the parts
-        most Webflow sites don't have: <mark class="mark">logins, payments, dashboards and databases</mark>,
-        wired together with Wized and Xano.</p>
-        <div class="hero-spice reveal" style="--d:.42s" aria-hidden="true">
-          <div class="badge">
-            <svg class="badge-ring" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-              <defs><path id="badge-o" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
-              <text><textPath href="#badge-o">Open for new projects &#8226; Webflow Wized Xano &#8226;</textPath></text>
-            </svg>
-            <span class="badge-core">is</span>
-          </div>
-          <svg class="spice-arrow" viewBox="0 0 150 70" xmlns="http://www.w3.org/2000/svg">
-            <path d="M8 12 C 45 52, 95 56, 136 34" fill="none" stroke="#111" stroke-width="2.5" stroke-dasharray="7 6" stroke-linecap="round"/>
-            <path d="M126 26 l12 7 -14 7" fill="none" stroke="#111" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+      <div class="hero-pin">
+        <div class="hero-bg" aria-hidden="true">
+          <img src="assets/img/ai/hero-void.jpg" alt="" fetchpriority="high" width="2048" height="1152">
         </div>
-        <a class="btn reveal" style="--d:.45s" href="#contact">Let's build <span class="btn-arrow" aria-hidden="true">&#8594;</span></a>
+        <div class="dust" aria-hidden="true"></div>
+
+        <div class="totem-stage" aria-hidden="true">
+          <div class="totem">
+            <div class="slab slab-1">
+              <i class="face f-front"><span>Webflow</span></i>
+              <i class="face f-back"></i>
+              <i class="face f-left"></i>
+              <i class="face f-right"></i>
+              <i class="face f-top"></i>
+            </div>
+            <div class="slab slab-2">
+              <i class="face f-front"><span>Wized</span></i>
+              <i class="face f-back"></i>
+              <i class="face f-left"></i>
+              <i class="face f-right"></i>
+              <i class="face f-top"></i>
+            </div>
+            <div class="slab slab-3">
+              <i class="face f-front"><span>Xano</span></i>
+              <i class="face f-back"></i>
+              <i class="face f-left"></i>
+              <i class="face f-right"></i>
+              <i class="face f-top"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-copy">
+          <h1 class="hero-title display">Apps, not just websites.</h1>
+          <p class="hero-mono" data-typer="Fullstack Webflow developer. Webflow x Wized x Xano." aria-label="Fullstack Webflow developer. Webflow x Wized x Xano.">
+            <span class="t-out" aria-hidden="true"></span><span class="caret" aria-hidden="true"></span>
+          </p>
+          <div class="hero-cta">
+            <a class="btn" href="work.html">See the work <span class="arr" aria-hidden="true">&#8594;</span></a>
+            <span class="avatar-chip">
+              <img src="assets/img/israel.jpeg" alt="" width="80" height="80">
+              Israel &middot; Top Rated on Upwork
+            </span>
+          </div>
+        </div>
+
+        <span class="scroll-hint" aria-hidden="true">Scroll</span>
       </div>
     </section>
 
-    <!-- ============ STATEMENT ============ -->
-    <section class="statement">
-      <p class="eyebrow reveal">Together, we can turn</p>
-      <h2 class="statement-title reveal" style="--d:.1s">Figma files into working products, and Webflow sites into full web&nbsp;apps.</h2>
-      <div class="doodle-row reveal" style="--d:.2s" aria-hidden="true">
-        <svg class="doodle" viewBox="0 0 120 110"><g transform="rotate(-4 60 55)"><rect x="14" y="12" width="92" height="86" rx="4" fill="#fff" stroke="#111" stroke-width="2.5"/><path d="M30 78 C 44 50, 68 66, 84 34" fill="none" stroke="#111" stroke-width="2.5" stroke-dasharray="6 5"/><path d="M80 30l10 2-4 9" fill="none" stroke="#111" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M38 34l10 10M48 34l-10 10" stroke="#111" stroke-width="2.5" stroke-linecap="round"/><path d="M70 74l10 10M80 74l-10 10" stroke="#111" stroke-width="2.5" stroke-linecap="round"/><circle cx="62" cy="26" r="6" fill="#004fe3"/><circle cx="88" cy="58" r="6" fill="orange"/><circle cx="30" cy="58" r="6" fill="#deaaff"/><circle cx="52" cy="90" r="5" fill="none" stroke="#111" stroke-width="2.5"/></g></svg>
-        <span class="doodle-slash"></span>
-        <svg class="doodle" viewBox="0 0 120 110"><g transform="rotate(3 60 55)"><rect x="16" y="10" width="88" height="90" rx="4" fill="#fff" stroke="#111" stroke-width="2.5"/><circle cx="34" cy="26" r="7" fill="none" stroke="#111" stroke-width="2.5"/><path d="M30 82 C 60 78, 44 46, 74 40" fill="none" stroke="#111" stroke-width="2.5"/><g transform="rotate(40 78 36)"><rect x="70" y="22" width="14" height="30" rx="3" fill="#ffcbb0" stroke="#111" stroke-width="2.5"/><path d="M70 52 l7 12 7-12z" fill="#fccf00" stroke="#111" stroke-width="2.5" stroke-linejoin="round"/></g><rect x="84" y="80" width="11" height="11" fill="#fff" stroke="#111" stroke-width="2.5"/></g></svg>
-        <span class="doodle-slash"></span>
-        <svg class="doodle" viewBox="0 0 120 110"><g transform="rotate(-3 60 55)"><rect x="14" y="14" width="92" height="82" rx="4" fill="#fff" stroke="#111" stroke-width="2.5"/><path d="M32 76 C 52 76, 50 38, 84 34" fill="none" stroke="#111" stroke-width="2.5"/><rect x="24" y="68" width="14" height="14" fill="#004fe3" stroke="#111" stroke-width="2.5"/><rect x="78" y="26" width="14" height="14" fill="#deaaff" stroke="#111" stroke-width="2.5"/><circle cx="56" cy="56" r="6" fill="#ffcbb0" stroke="#111" stroke-width="2.5"/><rect x="30" y="22" width="26" height="18" rx="3" fill="#ffcbb0" stroke="#111" stroke-width="2.5"/><text x="43" y="35" font-family="Arial" font-size="11" font-weight="700" text-anchor="middle" fill="#111">&lt;/&gt;</text><circle cx="88" cy="78" r="10" fill="#deaaff" stroke="#111" stroke-width="2.5"/><path d="M92 82l8 8" stroke="#111" stroke-width="3" stroke-linecap="round"/></g></svg>
-        <span class="doodle-slash"></span>
-        <svg class="doodle" viewBox="0 0 120 110"><g transform="rotate(2 60 55)"><rect x="20" y="16" width="80" height="56" rx="3" fill="#fff" stroke="#111" stroke-width="2.5"/><rect x="44" y="8" width="32" height="8" fill="#ffcbb0" stroke="#111" stroke-width="2.5"/><path d="M32 60 L50 44 L60 52 L86 28" fill="none" stroke="#111" stroke-width="2.5"/><path d="M80 28h8v8" fill="none" stroke="#111" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M40 72 L30 98 M80 72 L90 98 M60 72 L60 98" stroke="#111" stroke-width="2.5" stroke-linecap="round"/><rect x="26" y="30" width="14" height="11" fill="#aed9e0" stroke="#111" stroke-width="2.5"/></g></svg>
+    <!-- ============ DATA STRIP ============ -->
+    <section class="data-strip" aria-label="Track record">
+      <div class="datum"><b data-count="4" data-suffix="+">4+</b><span>Years building</span></div>
+      <div class="datum"><b data-count="178" data-suffix="+">178+</b><span>Upwork hours</span></div>
+      <div class="datum"><b>Top</b><span>Rated &middot; Upwork</span></div>
+      <div class="datum"><b data-count="4">4</b><span>Shipped builds</span></div>
+    </section>
+
+    <!-- ============ SERVICES: THREE BEATS ============ -->
+    <section class="svc" aria-label="Services">
+      <div class="svc-pin">
+        <div class="svc-bgs" aria-hidden="true">
+          <div class="svc-bg is-active"><img src="assets/img/ai/svc-develop.jpg" alt="" loading="lazy"></div>
+          <div class="svc-bg"><img src="assets/img/ai/svc-integrate.jpg" alt="" loading="lazy"></div>
+          <div class="svc-bg"><img src="assets/img/ai/svc-rank.jpg" alt="" loading="lazy"></div>
+        </div>
+        <div class="scene-head">
+          <p class="eyebrow">What I do</p>
+        </div>
+        <div class="svc-panels">
+          <article class="svc-panel is-active">
+            <span class="svc-num">01 / 03</span>
+            <h2 class="svc-title">Developing</h2>
+            <p class="svc-copy">Fullstack builds on Webflow: Wized for the logic, Xano or Airtable for
+            the database. User accounts, Stripe payments, client dashboards and custom CRMs.</p>
+          </article>
+          <article class="svc-panel">
+            <span class="svc-num">02 / 03</span>
+            <h2 class="svc-title">Integrating</h2>
+            <p class="svc-copy">Your site, connected to everything else: APIs, Zapier &amp; Make automations,
+            Memberstack, calendar and email syncs. Plus clean migrations from WordPress, Squarespace and Wix.</p>
+          </article>
+          <article class="svc-panel">
+            <span class="svc-num">03 / 03</span>
+            <h2 class="svc-title">Ranking</h2>
+            <p class="svc-copy">SEO for Google, GEO &amp; AEO for AI. I structure sites so they rank in search
+            and get recommended by ChatGPT and Perplexity, with every decision backed by real SEMrush data.</p>
+          </article>
+        </div>
+        <div class="svc-progress" aria-hidden="true"><i class="is-active"></i><i></i><i></i></div>
       </div>
     </section>
 
-    <!-- ============ SERVICES ============ -->
-    <section class="services" id="services">
-      <div class="services-block reveal" aria-hidden="true"><span>W</span><span>W</span><span>X</span></div>
-      <div class="services-rows">
-        <article class="service-row reveal">
-          <h2 class="service-title"><span class="hl hl-lilac">Developing</span></h2>
-          <p class="service-copy">Fullstack builds on Webflow: Wized for the logic, Xano or Airtable for
-          the database. User accounts, Stripe payments, client dashboards and custom CRMs.</p>
-          <svg class="service-doodle" viewBox="0 0 120 110" aria-hidden="true"><g transform="rotate(-3 60 55)"><path d="M32 76 C 52 76, 50 38, 84 34" fill="none" stroke="#111" stroke-width="2.5"/><rect x="24" y="68" width="14" height="14" fill="#004fe3" stroke="#111" stroke-width="2.5"/><rect x="78" y="26" width="14" height="14" fill="#deaaff" stroke="#111" stroke-width="2.5"/><rect x="34" y="24" width="30" height="20" rx="3" fill="#ffcbb0" stroke="#111" stroke-width="2.5"/><text x="49" y="38" font-family="Arial" font-size="12" font-weight="700" text-anchor="middle" fill="#111">&lt;/&gt;</text><circle cx="88" cy="76" r="10" fill="#deaaff" stroke="#111" stroke-width="2.5"/><path d="M94 82l8 8" stroke="#111" stroke-width="3" stroke-linecap="round"/></g></svg>
-        </article>
-        <article class="service-row reveal">
-          <h2 class="service-title"><span class="hl hl-yellow">Integrating</span></h2>
-          <p class="service-copy">Your site, connected to everything else: APIs, Zapier &amp; Make automations,
-          Memberstack, calendar and email syncs. Plus clean migrations from WordPress, Squarespace and Wix.</p>
-          <svg class="service-doodle" viewBox="0 0 120 110" aria-hidden="true"><g transform="rotate(3 60 55)"><rect x="16" y="38" width="30" height="30" rx="4" fill="#aed9e0" stroke="#111" stroke-width="2.5"/><rect x="74" y="38" width="30" height="30" rx="4" fill="#ffcbb0" stroke="#111" stroke-width="2.5"/><path d="M50 53h6l4-8 6 16 4-8h6" fill="none" stroke="#111" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M64 20l-8 14h10l-8 14" fill="none" stroke="#111" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="31" cy="53" r="5" fill="#fff" stroke="#111" stroke-width="2.5"/><circle cx="89" cy="53" r="5" fill="#fff" stroke="#111" stroke-width="2.5"/></g></svg>
-        </article>
-        <article class="service-row reveal">
-          <h2 class="service-title"><span class="hl hl-turquoise">Ranking</span></h2>
-          <p class="service-copy">SEO for Google, GEO &amp; AEO for AI. I structure sites so they rank in search
-          and get recommended by ChatGPT and Perplexity, with every decision backed by real SEMrush data.</p>
-          <svg class="service-doodle" viewBox="0 0 120 110" aria-hidden="true"><g transform="rotate(-2 60 55)"><rect x="20" y="20" width="80" height="56" rx="3" fill="#fff" stroke="#111" stroke-width="2.5"/><path d="M32 64 L50 48 L60 56 L86 32" fill="none" stroke="#111" stroke-width="2.5"/><path d="M80 32h8v8" fill="none" stroke="#111" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="26" y="30" width="14" height="11" fill="#fccf00" stroke="#111" stroke-width="2.5"/><path d="M40 76 L32 98 M80 76 L88 98" stroke="#111" stroke-width="2.5" stroke-linecap="round"/></g></svg>
-        </article>
+    <!-- ============ THE SCREENING ROOM ============ -->
+    <section class="screening" aria-label="Featured work">
+      <div class="screening-pin">
+        <div class="dust" aria-hidden="true"></div>
+        <div class="screening-head scene-head">
+          <p class="eyebrow">Selected work</p>
+          <h2 class="display screening-title">The screening room</h2>
+        </div>
+
+        <a class="exhibit" data-exhibit="1" data-open="little-yogi" href="work.html#little-yogi"
+           aria-label="Little Yogi, booking platform. Open the case video.">
+          <div class="exhibit-tilt">
+            <div class="exhibit-screen">
+              <div class="exhibit-media">
+                <img src="assets/img/poster-little-yogi.jpg" alt="Little Yogi booking platform interface" loading="lazy" width="1600" height="660">
+                <video muted playsinline loop preload="none" data-src="assets/video/little-yogi.mp4" tabindex="-1" aria-hidden="true"></video>
+              </div>
+              <div class="exhibit-reflect" aria-hidden="true">
+                <img src="assets/img/poster-little-yogi.jpg" alt="" loading="lazy">
+              </div>
+            </div>
+            <div class="plaque">
+              <span>No. 01 &middot; <span class="p-title">Little Yogi</span> &middot; Booking platform</span>
+              <span>Webflow &middot; Wized &middot; Xano &middot; Stripe</span>
+              <span class="p-watch">Watch <span aria-hidden="true">&#8599;</span></span>
+            </div>
+          </div>
+        </a>
+
+        <a class="exhibit" data-exhibit="2" data-open="jobs-board" href="work.html#jobs-board"
+           aria-label="Assisting Work, jobs board. Open the case video.">
+          <div class="exhibit-tilt">
+            <div class="exhibit-screen">
+              <div class="exhibit-media">
+                <img src="assets/img/poster-jobs-board.jpg" alt="Assisting Work jobs board dashboard" loading="lazy" width="1600" height="762">
+                <video muted playsinline loop preload="none" data-src="assets/video/jobs-board.mp4" tabindex="-1" aria-hidden="true"></video>
+              </div>
+              <div class="exhibit-reflect" aria-hidden="true">
+                <img src="assets/img/poster-jobs-board.jpg" alt="" loading="lazy">
+              </div>
+            </div>
+            <div class="plaque">
+              <span>No. 02 &middot; <span class="p-title">Assisting Work</span> &middot; Jobs board</span>
+              <span>Webflow &middot; Wized &middot; Xano</span>
+              <span class="p-watch">Watch <span aria-hidden="true">&#8599;</span></span>
+            </div>
+          </div>
+        </a>
+
+        <div class="screening-more">
+          <a class="btn btn-ghost" href="work.html">All work <span class="arr" aria-hidden="true">&#8594;</span></a>
+        </div>
       </div>
     </section>
 
-    <!-- ============ ABOUT ============ -->
-    <section class="about" id="about">
-      <div class="about-words" aria-hidden="true">
-        <span class="about-word reveal">Design</span>
-        <span class="about-inline">
-          <img class="about-avatar reveal" style="--d:.15s" src="assets/img/israel.jpeg" alt="" width="160" height="160">
-          <span class="about-word reveal" style="--d:.1s">Develop</span>
-        </span>
-        <span class="about-word about-word-ghost reveal" style="--d:.2s">Deliver</span>
-      </div>
-      <div class="about-story">
-        <h2 class="visually-hidden">About Israel</h2>
-        <p class="about-lede reveal">Hi, I'm Israel. Four-plus years ago I started building Webflow sites.
-        Today I ship full web applications on top of them.</p>
-        <p class="reveal" style="--d:.1s">I'm a WWX expert (Webflow, Wized, Xano) with a UX foundation and enough
-        JavaScript, Node and React to go off-platform when a project demands it. My clients get custom back-end
-        systems and responsive, dynamic interfaces: membership sites, SaaS apps, booking flows and CRMs that
-        Webflow alone can't do.</p>
-        <p class="reveal" style="--d:.15s">I'm <a href="https://www.upwork.com/freelancers/~019128efde315b79e5" target="_blank" rel="noopener">Top&nbsp;Rated on Upwork</a>,
-        with 178+ hours logged for clients worldwide.</p>
-      </div>
-      <ol class="steps">
-        <li class="step reveal">
-          <span class="step-num" aria-hidden="true">01</span>
-          <h3 class="step-title">Understand</h3>
-          <p>Customer, business, design: I map the project from every side before touching a tool.</p>
-        </li>
-        <li class="step reveal" style="--d:.08s">
-          <span class="step-num" aria-hidden="true">02</span>
-          <h3 class="step-title">Build fast</h3>
-          <p>Quick design iterations in Webflow keep the process agile and visible from day one.</p>
-        </li>
-        <li class="step reveal" style="--d:.16s">
-          <span class="step-num" aria-hidden="true">03</span>
-          <h3 class="step-title">Refine</h3>
-          <p>Test, gather feedback, revise until the product behaves exactly the way it should.</p>
-        </li>
-        <li class="step reveal" style="--d:.24s">
-          <span class="step-num" aria-hidden="true">04</span>
-          <h3 class="step-title">Launch</h3>
-          <p>Connect the backend, wire the automations, and put it live.</p>
-        </li>
-      </ol>
-    </section>
-
-    <!-- ============ TOOLS MARQUEE ============ -->
-    <div class="marquee" aria-label="Tools Israel works with">
-      <div class="marquee-track">
-        <span class="marquee-group">
-          <span>Webflow</span><i></i><span>Wized</span><i></i><span>Xano</span><i></i><span>Airtable</span><i></i><span>Stripe</span><i></i><span>Memberstack</span><i></i><span>Zapier</span><i></i><span>Make</span><i></i><span>Figma</span><i></i><span>JavaScript</span><i></i><span>Node.js</span><i></i><span>React</span><i></i><span>SEO / GEO / AEO</span><i></i>
-        </span>
-        <span class="marquee-group" aria-hidden="true">
-          <span>Webflow</span><i></i><span>Wized</span><i></i><span>Xano</span><i></i><span>Airtable</span><i></i><span>Stripe</span><i></i><span>Memberstack</span><i></i><span>Zapier</span><i></i><span>Make</span><i></i><span>Figma</span><i></i><span>JavaScript</span><i></i><span>Node.js</span><i></i><span>React</span><i></i><span>SEO / GEO / AEO</span><i></i>
-        </span>
-      </div>
-    </div>
-
-    <!-- ============ WORK ============ -->
-    <section class="work" id="work">
-      <div class="work-head">
-        <h2 class="work-title reveal">Selected<br>work</h2>
-        <div class="work-aside reveal" style="--d:.15s">
-          <p>Real client builds, every one shipped and in use. Click a project to watch it working.</p>
-        </div>
-      </div>
-
-      <a class="work-card reveal" href="#little-yogi" data-project="little-yogi">
-        <figure class="work-media">
-          <img src="assets/img/poster-little-yogi.jpg" alt="Little Yogi booking platform, parents booking children's yoga classes" loading="lazy" width="1600" height="660">
-          <span class="work-play" aria-hidden="true">Watch <i>&#9654;</i></span>
-        </figure>
-        <div class="work-meta">
-          <div>
-            <h3 class="work-name">Little Yogi</h3>
-            <p class="work-desc">Parents log in, book kids' yoga classes and pay with Stripe. Bookings sync to the studio's Outlook calendar, and session photos land in the parent dashboard.</p>
-          </div>
-          <ul class="chips" aria-label="Built with">
-            <li class="chip chip-turquoise">Webflow</li>
-            <li class="chip chip-lilac">Wized</li>
-            <li class="chip chip-peach">Xano</li>
-            <li class="chip chip-yellow">Stripe</li>
-          </ul>
-        </div>
-      </a>
-
-      <a class="work-card reveal" href="#jobs-board" data-project="jobs-board">
-        <figure class="work-media">
-          <img src="assets/img/poster-jobs-board.jpg" alt="Assisting Work jobs board, employer dashboard with job listings" loading="lazy" width="1600" height="762">
-          <span class="work-play" aria-hidden="true">Watch <i>&#9654;</i></span>
-        </figure>
-        <div class="work-meta">
-          <div>
-            <h3 class="work-name">Assisting Work</h3>
-            <p class="work-desc">Employers pay to post jobs; approved listings go live on the board and every application routes straight back to the poster.</p>
-          </div>
-          <ul class="chips" aria-label="Built with">
-            <li class="chip chip-turquoise">Webflow</li>
-            <li class="chip chip-lilac">Wized</li>
-            <li class="chip chip-peach">Xano</li>
-            <li class="chip chip-pink">Payments</li>
-          </ul>
-        </div>
-      </a>
-
-      <a class="work-card reveal" href="#bartending" data-project="bartending">
-        <figure class="work-media">
-          <img src="assets/img/poster-bartending.jpg" alt="About Town Bartending pricing calculator" loading="lazy" width="1600" height="788">
-          <span class="work-play" aria-hidden="true">Watch <i>&#9654;</i></span>
-        </figure>
-        <div class="work-meta">
-          <div>
-            <h3 class="work-name">About Town Bartending</h3>
-            <p class="work-desc">A pricing calculator for bar packages: quotes computed in Wized, every enquiry stored in Airtable, follow-up emails sent automatically to people who book a date.</p>
-          </div>
-          <ul class="chips" aria-label="Built with">
-            <li class="chip chip-turquoise">Webflow</li>
-            <li class="chip chip-lilac">Wized</li>
-            <li class="chip chip-yellow">Airtable</li>
-            <li class="chip chip-peach">Automation</li>
-          </ul>
-        </div>
-      </a>
-
-      <a class="work-card reveal" href="#questworks" data-project="questworks">
-        <figure class="work-media">
-          <img src="assets/img/poster-questworks.jpg" alt="QuestWorks gaming application, player dashboard" loading="lazy" width="1600" height="888">
-          <span class="work-play" aria-hidden="true">Watch <i>&#9654;</i></span>
-        </figure>
-        <div class="work-meta">
-          <div>
-            <h3 class="work-name">QuestWorks</h3>
-            <p class="work-desc">Player dashboards for a gaming app, with each user's progress and their competitors' stats pulled live from Airtable through Wized.</p>
-          </div>
-          <ul class="chips" aria-label="Built with">
-            <li class="chip chip-turquoise">Webflow</li>
-            <li class="chip chip-lilac">Wized</li>
-            <li class="chip chip-yellow">Airtable</li>
-          </ul>
-        </div>
-      </a>
-    </section>
-
-    <!-- ============ CONTACT / FOOTER ============ -->
-    <footer class="footer" id="contact">
-      <div class="footer-cta">
-        <p class="eyebrow reveal">Have a project?</p>
-        <h2 class="footer-title reveal" style="--d:.1s">Your site could<br>be doing more.</h2>
-        <div class="footer-actions reveal" style="--d:.2s">
-          <a class="btn" href="mailto:Israeldianga@gmail.com?subject=Project%20enquiry">Email Israel <span class="btn-arrow" aria-hidden="true">&#8594;</span></a>
-          <a class="footer-mail" href="mailto:Israeldianga@gmail.com">Israeldianga@gmail.com</a>
-          <a class="footer-mail" href="https://www.linkedin.com/in/israel-dianga-b27621217" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">&#8599;</span></a>
-          <a class="footer-mail" href="https://www.upwork.com/freelancers/~019128efde315b79e5" target="_blank" rel="noopener">Upwork <span aria-hidden="true">&#8599;</span></a>
-        </div>
-      </div>
-      <div class="footer-band">
-        <span class="footer-wordmark" aria-hidden="true">israel</span>
-        <div class="footer-meta">
-          <span>&copy; 2026 Israel &middot; Fullstack Webflow Developer</span>
-          <a href="#top">Back to top &#8593;</a>
-        </div>
-      </div>
-    </footer>
+    <!-- ============ CTA ============ -->
+    <a class="cta-strip" href="contact.html">
+      <span class="display">Have a project? Let's build</span>
+      <span class="arr" aria-hidden="true">&#8594;</span>
+    </a>
 
   </main>
 
-  <!-- ============ VIDEO LIGHTBOX ============ -->
+  <footer class="footer">
+    <span class="mono copyright">&copy; 2026 Israel &middot; Fullstack Webflow Developer</span>
+    <span class="mono">
+      <a href="mailto:Israeldianga@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/israel-dianga-b27621217" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.upwork.com/freelancers/~019128efde315b79e5" target="_blank" rel="noopener">Upwork</a>
+    </span>
+  </footer>
+
+  <!-- ============ LIGHTBOX ============ -->
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lb-title" hidden>
     <div class="lightbox-inner">
-      <button class="lightbox-close" aria-label="Close project video">&#10005;</button>
+      <button class="lightbox-close" aria-label="Close case video">&#10005;</button>
       <div class="lightbox-info">
-        <h2 class="lightbox-title" id="lb-title"></h2>
-        <p class="lightbox-role"><span>My role.</span> <strong id="lb-role"></strong></p>
+        <p class="lightbox-eyebrow" id="lb-no"></p>
+        <h2 class="lightbox-title display" id="lb-title"></h2>
+        <p class="lightbox-role" id="lb-role"></p>
         <p class="lightbox-desc" id="lb-desc"></p>
-        <ul class="chips" id="lb-chips" aria-label="Skills and deliverables"></ul>
+        <ul class="lightbox-tags" id="lb-tags" aria-label="Stack"></ul>
       </div>
       <div class="lightbox-media">
         <video id="lb-video" controls playsinline preload="metadata"></video>
@@ -294,6 +224,5 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
 </body>
 </html>
